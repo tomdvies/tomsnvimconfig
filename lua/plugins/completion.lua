@@ -5,7 +5,7 @@ return {
         event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path",
-            "dcampos/cmp-snippy", "dcampos/nvim-snippy"
+            "dcampos/cmp-snippy", "dcampos/nvim-snippy", "hrsh7th/cmp-nvim-lua"
         },
         -- Not all LSP servers add brackets when completing a function.
         -- To better deal with this, LazyVim adds a custom option to cmp,
@@ -29,7 +29,7 @@ return {
                            vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(
                                col, col):match("%s") == nil
             end
-
+            
             return {
                 completion = {
                     completeopt = "menu,menuone,noselect" -- remove `noselect`.
@@ -37,7 +37,7 @@ return {
                 preselect = cmp.PreselectMode.None,
                 -- register the lsp as completion provider
                 sources = cmp.config.sources({
-                    {name = "nvim_lsp"}, {name = "snippy"}
+                    {name = "nvim_lsp"}, {name = "snippy"}, { name = 'nvim_lua' }
                 }),
                 snippet = {
                     -- REQUIRED - you must specify a snippet engine

@@ -1,7 +1,7 @@
 return {
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = {'nvim-tree/nvim-web-devicons'},
+        dependencies = {'nvim-tree/nvim-web-devicons', 'folke/noice.nvim'},
         config = function()
             require('lualine').setup({
                 options = {
@@ -9,7 +9,10 @@ return {
                     theme = 'auto',
                     component_separators = {left = '', right = ''},
                     section_separators = {left = '', right = ''},
-                    disabled_filetypes = {statusline = {}, winbar = {}},
+                    disabled_filetypes = {
+                        statusline = {},
+                        winbar = {},
+                    },
                     ignore_focus = {},
                     always_divide_middle = true,
                     globalstatus = false,
@@ -19,7 +22,13 @@ return {
                     lualine_a = {'mode'},
                     lualine_b = {'branch', 'diff', 'diagnostics'},
                     lualine_c = {'filename'},
-                    lualine_x = {'encoding', 'fileformat', 'filetype'},
+                    lualine_x = {
+                        'encoding', 'filetype', {
+                            require("noice").api.status.command.get,
+                            cond = require("noice").api.status.command.has,
+                            color = {fg = "#ff9e64"}
+                        }
+                    },
                     lualine_y = {'progress'},
                     lualine_z = {'location'}
                 },
@@ -34,7 +43,7 @@ return {
                 tabline = {},
                 winbar = {},
                 inactive_winbar = {},
-                extensions = {}
+                extensions = {"nvim-tree", "toggleterm"}
             })
         end
     }

@@ -16,6 +16,7 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.shiftwidth = 4
+vim.o.relativenumber = true
 
 -- set the theme
 vim.opt.background = "dark" -- set this to dark or light
