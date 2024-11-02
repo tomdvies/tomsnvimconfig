@@ -10,7 +10,7 @@ return {
             local lspCapabilities = vim.lsp.protocol.make_client_capabilities()
             lspCapabilities.textDocument.completion.completionItem
                 .snippetSupport = true
-            
+
             -- Rust
             require("lspconfig").rust_analyzer.setup({
                 ---@param client lsp.Client
@@ -22,10 +22,23 @@ return {
                     }
                 }
             })
+            require("lspconfig")["pyright"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    python = {
+                        analysis = {
+                            diagnosticSeverityOverrides = {
+                                reportUnusedExpression = "none"
+                            }
+                        }
+                    }
+                }
+            })
 
             -- R - needs to be installed from R directly
             require("lspconfig").r_language_server.setup({})
-            
+
         end
     }
 }

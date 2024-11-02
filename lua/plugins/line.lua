@@ -10,14 +10,15 @@ return {
                 white = '#c6c6c6',
                 red = '#ff5189',
                 violet = '#d183e8',
-                grey = '#303030'
+                grey = '#303030',
+                innerbg = '#080808'
             }
 
             local bubbles_theme = {
                 normal = {
                     a = {fg = colors.black, bg = colors.violet},
                     b = {fg = colors.white, bg = colors.grey},
-                    c = {fg = colors.white}
+                    c = {fg = colors.white, bg = colors.innerbg}
                 },
 
                 insert = {a = {fg = colors.black, bg = colors.blue}},
@@ -27,7 +28,7 @@ return {
                 inactive = {
                     a = {fg = colors.white, bg = colors.black},
                     b = {fg = colors.white, bg = colors.black},
-                    c = {fg = colors.white}
+                    c = {fg = colors.white, bg = colors.innerbg}
                 }
             }
 

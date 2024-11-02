@@ -16,15 +16,15 @@ vim.o.expandtab = true
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.shiftwidth = 4
-vim.o.relativenumber = true
+-- vim.o.relativenumber = true
 
 -- set the theme
 vim.opt.background = "dark" -- set this to dark or light
 vim.cmd.colorscheme("modus")
 -- some themes overwrite this so reset mini cursorword highlighting
 vim.cmd("hi clear MiniCursorword")
--- vim.cmd("hi clear MiniCursorwordCurrent")
-vim.cmd("hi MiniCursorwordCurrent guibg=#7D7D7D")
+vim.cmd("hi clear MiniCursorwordCurrent")
+vim.cmd("hi MiniCursorwordCurrent gui=underline cterm=underline")
 vim.cmd("hi MiniCursorword gui=underline cterm=underline")
 -- vim.cmd("hi clear NvimTreeSpecialFile")
 -- vim.cmd("hi NvimTreeSpecialFile guifg=#ff80ff")
@@ -47,3 +47,8 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "setlocal shiftwidth=2 tabstop=2"
 })
 
+-- Enable relative line numbers
+-- vim.opt.number = true
+vim.opt.relativenumber = true
+-- vim.o.statuscolumn = "%s %l %r"
+vim.opt.scrolloff = 10
