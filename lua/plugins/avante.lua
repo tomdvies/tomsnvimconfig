@@ -107,6 +107,14 @@ return {
                         -- required for Windows users
                         use_absolute_path = true
                     }
+                },
+                keys = {
+                    -- suggested keymap
+                    {
+                        "<leader>p",
+                        "<cmd>PasteImage<cr>",
+                        desc = "Paste image from system clipboard"
+                    }
                 }
             }
             -- {

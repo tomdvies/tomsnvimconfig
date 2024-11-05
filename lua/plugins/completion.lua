@@ -84,6 +84,6 @@ return {
                 }
             }
         end
-    }, {"rafamadriz/friendly-snippets"}
+    }, {"rafamadriz/friendly-snippets"},{"honza/vim-snippets"}
 
 }

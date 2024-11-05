@@ -28,7 +28,7 @@ return {
             require("conform").setup {
 
                 formatters = {
-                    styler = {
+                    styler2 = {
                         -- hijacking "https://github.com/devOpifex/r.nvim",
                         args = {
                             "-s", "-e", "styler::style_file(commandArgs(TRUE))",
@@ -42,8 +42,8 @@ return {
                 formatters_by_ft = {
                     lua = {"lua-format"},
                     python = {"black"},
-                    r = {"styler"},
-                    rmd = {"styler"},
+                    -- r = {"styler2"},
+                    -- rmd = {"styler"},
                     rust = {"rustfmt"},
                     markdown = {"injected"},
                     javascript = {
