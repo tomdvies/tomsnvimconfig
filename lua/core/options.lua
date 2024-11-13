@@ -3,6 +3,8 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- global status line
+-- vim.opt.laststatus = 3
 -- more colours
 vim.opt.termguicolors = true
 

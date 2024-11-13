@@ -10,7 +10,7 @@ return {
                 ensure_installed = {
                     "c", "lua", "vim", "vimdoc", "query", "elixir", "heex",
                     "javascript", "html", "python", "r", "rust", "cpp",
-                    "markdown", "markdown_inline"
+                    "markdown", "markdown_inline", "rnoweb", "yaml"
                 },
                 sync_install = false,
                 highlight = {enable = true},

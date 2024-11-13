@@ -2,7 +2,7 @@ return {
     {
         "stevearc/conform.nvim",
         dependencies = {
-            "mason.nvim", "https://github.com/devOpifex/r.nvim",
+            "mason.nvim", -- "https://github.com/devOpifex/r.nvim",
             {"williamboman/mason-lspconfig.nvim", config = function() end}
         },
         cmd = {"ConformInfo"},
@@ -16,7 +16,7 @@ return {
                         lsp_fallback = true
                     })
                 end,
-                mode = "",
+                mode = "n",
                 desc = "Format buffer"
             }
         },

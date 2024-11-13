@@ -23,7 +23,7 @@ return {
                     "isort", -- python formatter
                     "black", -- python formatter
                     "luaformatter",
-                    "ruff-lsp", "pylint", "eslint_d"
+                    "ruff-lsp", "pylint", "eslint_d", "lua-language-server"
                 }
             })
         end

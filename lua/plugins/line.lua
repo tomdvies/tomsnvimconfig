@@ -1,3 +1,5 @@
+-- I should move to heirline
+
 return {
     {
         'nvim-lualine/lualine.nvim',

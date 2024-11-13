@@ -35,9 +35,13 @@ return {
                     }
                 }
             })
+            require'lspconfig'.lua_ls.setup{}
 
             -- R - needs to be installed from R directly
             require("lspconfig").r_language_server.setup({})
+            vim.keymap.set("n", "<leader>q",
+                           function() vim.diagnostic.open_float() end,
+                           {desc = "LSP messages"})
 
         end
     }

@@ -27,7 +27,7 @@ return {
                     return vim.o.columns * 0.3
                 end
             end,
-            open_mapping = Nil,
+            open_mapping = nil,
             start_in_insert = false
         },
         config = function(_, opts)
@@ -81,6 +81,13 @@ return {
                     args = vim.v.count
                 })
             end)
+            -- Repeat last command by sending up arrow + enter
+            vim.keymap.set({"n"}, "<leader>y", function()
+                local term = require("toggleterm")
+                if term then
+                    term.exec("\x1b[A")  -- Send up arrow (\x1b[A) followed by enter (\r)
+                end
+            end, {desc = "Repeat last terminal command"})
         end
     }
 }
