@@ -1,0 +1,11 @@
+# for molten
+pillow
+requests
+nbformat
+pyperclip
+plotly
+kaleido
+pnglatex
+pynvim
+jupyter_client
+
