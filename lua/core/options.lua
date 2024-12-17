@@ -45,6 +45,18 @@ vim.api.nvim_create_autocmd("FileType", {
     command = "setlocal shiftwidth=2 tabstop=2"
 })
 vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tex",
+    command = "setlocal shiftwidth=2 tabstop=2"
+})
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "latex",
+    command = "setlocal shiftwidth=2 tabstop=2"
+})
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "c",
+    command = "setlocal shiftwidth=2 tabstop=2"
+})
+vim.api.nvim_create_autocmd("FileType", {
     pattern = "html",
     command = "setlocal shiftwidth=2 tabstop=2"
 })

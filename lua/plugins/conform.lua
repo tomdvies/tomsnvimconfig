@@ -46,6 +46,8 @@ return {
                     -- rmd = {"styler"},
                     rust = {"rustfmt"},
                     markdown = {"injected"},
+                    tex = {"tex-fmt"},
+                    latex = {"tex-fmt"},
                     javascript = {
                         "prettierd",
                         "prettier",

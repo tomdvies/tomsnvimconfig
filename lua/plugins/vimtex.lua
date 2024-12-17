@@ -11,12 +11,19 @@ return {
             vim.g.vimtex_view_skim_activate = 1
             require("lspconfig").digestif.setup({})
             vim.g.tex_flavor = "latex"
-            vim.keymap.set("n", "<leader>pp",
+            vim.keymap.set("n", "<leader>;;",
                            function() vim.cmd("VimtexCompile") end, {})
             vim.g.vimtex_compiler_latexmk = {
+                build_dir = '.vimtex',
+                callback = 1,
+                continuous = 1,
+                out_dir = '.',
                 options = {
-                    "-verbose", "-file-line-error", "-synctex=1",
-                    "-interaction=nonstopmode", "-shell-escape"
+                    "-verbose",
+                    "-file-line-error",
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-shell-escape"
                 }
             }
             -- vim.g.vimtex_compiler_latexmk_engines = {

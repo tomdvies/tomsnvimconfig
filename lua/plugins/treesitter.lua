@@ -8,7 +8,7 @@ return {
 
             configs.setup({
                 ensure_installed = {
-                    "c", "lua", "vim", "vimdoc", "query", "elixir", "heex",
+                    "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "rust", "javascript", "css",
                     "javascript", "html", "python", "r", "rust", "cpp",
                     "markdown", "markdown_inline", "rnoweb", "yaml"
                 },
