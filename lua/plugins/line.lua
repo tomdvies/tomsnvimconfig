@@ -1,5 +1,4 @@
 -- I should move to heirline
-
 return {
     {
         'nvim-lualine/lualine.nvim',
@@ -33,6 +32,16 @@ return {
                     c = {fg = colors.white, bg = colors.innerbg}
                 }
             }
+            local function getWords()
+                local wc = vim.fn.wordcount()
+                if vim.fn.mode():find('[vV]') then
+                    -- Return visual selection word count if in visual mode
+                    return tostring(wc.visual_words or 0)
+                else
+                    -- Return total word count otherwise
+                    return tostring(wc.words)
+                end
+            end
 
             require('lualine').setup({
                 options = {
@@ -47,11 +56,9 @@ return {
                     refresh = {statusline = 1000, tabline = 1000, winbar = 1000}
                 },
                 sections = {
-                    lualine_a = {{
-                        'mode',
-                        separator = {left = ''},
-                        right_padding = 2
-                    }},
+                    lualine_a = {
+                        {'mode', separator = {left = ''}, right_padding = 2}
+                    },
                     lualine_b = {'branch', 'diff', 'diagnostics'},
                     lualine_c = {'filename'},
                     lualine_x = {
@@ -61,12 +68,14 @@ return {
                             color = {fg = "#ff9e64"}
                         }
                     },
-                    lualine_y = {'progress'},
-                    lualine_z = {{
-                        'location',
-                        separator = {right = ''},
-                        left_padding = 2
-                    }}
+                    lualine_y = {'progress', getWords},
+                    lualine_z = {
+                        {
+                            'location',
+                            separator = {right = ''},
+                            left_padding = 2
+                        }
+                    }
                 },
                 inactive_sections = {
                     lualine_a = {},

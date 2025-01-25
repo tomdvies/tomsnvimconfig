@@ -12,7 +12,7 @@ return {
                 automatic_installation = true,
                 ensure_installed = {
                     "cssls", "eslint", "html", "jsonls", "pyright",
-                    "tailwindcss", "rust_analyzer", "taplo"
+                    "tailwindcss", "rust_analyzer", "taplo", "pylsp",
                 }
             })
 
@@ -24,7 +24,8 @@ return {
                     "isort", -- python formatter
                     "black", -- python formatter
                     "luaformatter",
-                    "ruff-lsp", "pylint", "eslint_d", "lua-language-server"
+                    "ruff-lsp", "pylint", "eslint_d", "lua-language-server",
+                    "mypy", "jedi-language-server"
                 }
             })
         end

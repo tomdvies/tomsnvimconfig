@@ -10,5 +10,5 @@ return {
                 end
             })
         end
-    }
+    }, {"savq/melange-nvim"}, {"https://github.com/sainnhe/sonokai"}
 }

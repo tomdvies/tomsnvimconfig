@@ -19,11 +19,8 @@ return {
                 continuous = 1,
                 out_dir = '.',
                 options = {
-                    "-verbose",
-                    "-file-line-error",
-                    "-synctex=1",
-                    "-interaction=nonstopmode",
-                    "-shell-escape"
+                    "-verbose", "-file-line-error", "-synctex=1",
+                    "-interaction=nonstopmode", "-shell-escape"
                 }
             }
             -- vim.g.vimtex_compiler_latexmk_engines = {
@@ -41,5 +38,28 @@ return {
             -- `matchparen.vim` needs to be disabled manually in case of lazy loading
             vim.g.loaded_matchparen = 1
         end
+    }, {
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+            default = {
+                prompt_for_file_name = true,
+                dir_path = "images", -- Save images to ./images/
+            },
+            filetypes = {
+                tex = {
+                    use_absolute_path = false, -- Use relative paths
+                    relative_template_path = true -- Path relative to LaTeX doc
+                }
+            }
+        },
+        keys = {
+            -- suggested keymap
+            {
+                "<leader>p",
+                "<cmd>PasteImage<cr>",
+                desc = "Paste image from system clipboard"
+            }
+        }
     }
 }

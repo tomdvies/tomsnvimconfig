@@ -38,6 +38,8 @@ vim.cmd("hi NvimTreeNormal guifg=NONE guibg=NONE")
 vim.cmd("hi NvimTreeNormalNC guifg=NONE guibg=NONE")
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 vim.cmd("hi NormalNC guibg=NONE ctermbg=NONE")
+-- vim.cmd("hi ToggleTerm guibg=NONE ctermbg=NONE")
+-- vim.cmd("hi ToggleTermNormal guibg=NONE ctermbg=NONE")
 vim.cmd("set mouse-=a")
 
 vim.api.nvim_create_autocmd("FileType", {

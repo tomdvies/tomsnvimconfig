@@ -28,7 +28,13 @@ return {
                 end
             end,
             open_mapping = nil,
-            start_in_insert = false
+            start_in_insert = false,
+
+            highlights = {
+                Normal = {guibg = "NONE"},
+                NormalFloat = {guibg = "NONE"}
+            },
+            shade_terminals = false,
         },
         config = function(_, opts)
             require("toggleterm").setup(opts)
@@ -85,7 +91,7 @@ return {
             vim.keymap.set({"n"}, "<leader>y", function()
                 local term = require("toggleterm")
                 if term then
-                    term.exec("\x1b[A")  -- Send up arrow (\x1b[A) followed by enter (\r)
+                    term.exec("\x1b[A") -- Send up arrow (\x1b[A) followed by enter (\r)
                 end
             end, {desc = "Repeat last terminal command"})
         end

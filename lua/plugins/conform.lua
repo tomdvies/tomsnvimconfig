@@ -41,7 +41,7 @@ return {
                 -- Define your formatters
                 formatters_by_ft = {
                     lua = {"lua-format"},
-                    python = {"black"},
+                    -- python = {"black"},
                     -- r = {"styler2"},
                     -- rmd = {"styler"},
                     rust = {"rustfmt"},
